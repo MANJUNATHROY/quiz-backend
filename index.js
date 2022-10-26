@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import posts from './routes/posts.js';
+import posts from './api/routes/posts.js';
 dotenv.config();
 
 const app = express();
