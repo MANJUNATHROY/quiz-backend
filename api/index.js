@@ -12,7 +12,7 @@ const app = express();
 // 		mongoose.connect(process.env.MONGO);
 // 		console.log("connected to mongoDB");
 // 	} catch (error) {
-// 		throw (error); 
+// 		throw (error);
 // 	}
 // }
 // mongoose.connection.on("disconnected", () => {
