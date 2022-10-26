@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import posts from './api/routes/posts.js';
-dotenv.config(); 
+import posts from './routes/posts.js';
+dotenv.config();
 
 const app = express();
 // const connect = async () => {
