@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import posts from './api/routes/posts.js';
-dotenv.config();
+dotenv.config(); 
 
 const app = express();
 // const connect = async () => {
