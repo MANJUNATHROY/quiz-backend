@@ -7,7 +7,7 @@ import cors from 'cors';
 import posts from './routes/posts.js';
 import scores from './routes/score.js';
 import images from './routes/image.js';
-import ImageModel from "./models/image.js";
+import ImageModel from "./models/Image.js";
 dotenv.config();
 
 const app = express();
