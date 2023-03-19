@@ -25,21 +25,21 @@ export const getPost = async (req, res) => {
 }
 
 export const createPost = async (req, res) => {
-	const { category, type, difficulty, question, correct_answer, incorrect_answers } = req.body;
-	const newPostMessage = new PostMessage({ category, type, difficulty, question, correct_answer, incorrect_answers });
+	const { category, subcategory, grade, type, difficulty, question, correct_answer, reason, incorrect_answers } = req.body;
+	const newPostMessage = new PostMessage({ category, subcategory, grade, type, difficulty, question, correct_answer, reason, incorrect_answers });
 	try {
 		await newPostMessage.save();
 		res.status(200).json(newPostMessage);
 	} catch (error) {
-		res.status(404).json({ message: "hello" })
+		res.status(404).json({ message: error.message })
 	}
 }
 
 export const updatePost = async (req, res) => {
 	const { id } = req.params;
-	const { category, type, difficulty, question, correct_answer, incorrect_answers } = req.body;
+	const { category, subcategory, grade, type, difficulty, question, correct_answer, reason, incorrect_answers } = req.body;
 	if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send("not found");
-	const updatedPost = { category, type, difficulty, question, correct_answer, incorrect_answers };
+	const updatedPost = { category, subcategory, grade, type, difficulty, question, correct_answer, reason, incorrect_answers };
 	await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
 	res.status(200).json(updatedPost);
 
