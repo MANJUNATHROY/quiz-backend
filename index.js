@@ -43,7 +43,7 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
 
 
 const Storage = multer.diskStorage({
-	destination: 'uploads',
+	destination: '/var/task/uploads',
 	filename: (req, file, cb) => {
 		cb(null, file.originalname)
 	}
