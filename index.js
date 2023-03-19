@@ -42,39 +42,39 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
 
 
 
-const Storage = multer.diskStorage({
-	destination: '/var/task/uploads',
-	filename: (req, file, cb) => {
-		cb(null, file.originalname)
-	}
-})
+// const Storage = multer.diskStorage({
+// 	destination: 'uploads',
+// 	filename: (req, file, cb) => {
+// 		cb(null, file.originalname)
+// 	}
+// })
 
-const createImage = multer({
-	storage: Storage
-}).single('testImage')
+// const createImage = multer({
+// 	storage: Storage
+// }).single('testImage')
 
-app.post('/upload', (req, res) => {
-	createImage(req, res, (err) => {
-		if (err) {
-			console.log(err)
-		}
-		else {
-			const newImage = new ImageModel({
-				name: req.body.name,
-				image: {
-					data: req.file.filename,
-					contentType: 'image/png'
-				}
-			})
-			try {
-				newImage.save()
-				res.status(200).json(newImage);
-			} catch (error) {
-				res.status(404).json({ message: error.message })
-			}
-		}
-	})
-})
+// app.post('/upload', (req, res) => {
+// 	createImage(req, res, (err) => {
+// 		if (err) {
+// 			console.log(err)
+// 		}
+// 		else {
+// 			const newImage = new ImageModel({
+// 				name: req.body.name,
+// 				image: {
+// 					data: req.file.filename,
+// 					contentType: 'image/png'
+// 				}
+// 			})
+// 			try {
+// 				newImage.save()
+// 				res.status(200).json(newImage);
+// 			} catch (error) {
+// 				res.status(404).json({ message: error.message })
+// 			}
+// 		}
+// 	})
+// })
 // mongoose.set('useFindAndModify', false);
 
 
