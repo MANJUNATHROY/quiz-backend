@@ -23,8 +23,8 @@ const app = express();
 // 	console.log("mongoDB disconnected");
 // })
 // app.get("/", (req, res) => {
-// 	res.send("hello");
-// })
+// 	res.status(200).json("Hello");
+// })			
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
