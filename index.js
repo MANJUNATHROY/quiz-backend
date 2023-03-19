@@ -33,7 +33,7 @@ app.use('/question', posts);
 app.use('/score', scores);
 app.use('/image', images);
 
-const CONNECTION_URL = 'mongodb+srv://mnroy2001:m123@quiz.zpvbqby.mongodb.net/test'
+const CONNECTION_URL = 'mongodb+srv://mnroy2001:m123@quiz.zpvbqby.mongodb.net/?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 8800
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
